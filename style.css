@@ -1,0 +1,68 @@
+:root {
+  --gold: #ffd700;
+  --neon: #00ff9d;
+  --dark: #0a0a0a;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--dark);
+  color: #eee;
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(10,10,10,0.95), rgba(10,10,10,0.95)), 
+                    url('https://source.unsplash.com/random/1920x1080/?dark,neon');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.header { text-align: center; padding: 25px 15px; background: rgba(0,0,0,0.9); border-bottom: 4px solid var(--gold); }
+.title { font-size: 2.8rem; font-weight: 900; color: var(--gold); text-shadow: 0 0 30px var(--gold), 0 0 60px #ff00ff; }
+.subtitle { color: var(--neon); margin-top: 8px; font-size: 1.2rem; }
+.live-clock { font-size: 2.1rem; font-weight: bold; color: var(--neon); margin: 15px 0; text-shadow: 0 0 20px var(--neon); }
+
+.active-card {
+  margin: 20px 15px;
+  padding: 30px 20px;
+  background: linear-gradient(145deg, #1a1a2e, #16213e);
+  border: 3px solid var(--gold);
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 50px rgba(255,215,0,0.5);
+}
+
+.game-list { margin: 20px 15px; }
+
+.game-item {
+  background: rgba(255,255,255,0.06);
+  padding: 18px 20px;
+  margin: 12px 0;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 6px solid var(--gold);
+  font-size: 1.1rem;
+}
+
+.game-item.active {
+  border-left-color: var(--neon);
+  background: rgba(0, 255, 150, 0.08);
+  box-shadow: 0 0 30px var(--neon);
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow { from { box-shadow: 0 0 15px var(--neon); } to { box-shadow: 0 0 40px var(--neon); } }
+
+.admin-btn {
+  position: fixed; bottom: 25px; left: 25px; background: #222; color: white;
+  padding: 14px 22px; border-radius: 50px; font-size: 1.1rem; z-index: 1000;
+  box-shadow: 0 0 25px rgba(255,255,255,0.2); cursor: pointer;
+}
+
+.whatsapp-btn {
+  position: fixed; bottom: 25px; right: 25px; background: #25D366; color: white;
+  padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold;
+  box-shadow: 0 0 30px #25D366; z-index: 1000;
+}
